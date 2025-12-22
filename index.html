@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samuel Quartey Opoku | Creative Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #6a11cb;
+            --secondary: #2575fc;
+            --accent: #ff416c;
+            --dark: #0a0a0a;
+            --dark-gray: #1a1a1a;
+            --light: #ffffff;
+            --text-gray: #b0b0b0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--light);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+        
+        .nav-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--light);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 120px;
+            position: relative;
+        }
+        
+        .hero .container {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+        }
+        
+        .hero h1 {
+            font-size: 72px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            letter-spacing: -2px;
+        }
+        
+        .hero-subtitle {
+            font-size: 28px;
+            color: var(--text-gray);
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+        
+        .hero-tags {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .hero-tag {
+            padding: 8px 16px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        
+        .hero-description {
+            font-size: 18px;
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin-bottom: 40px;
+            max-width: 700px;
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+        
+        .hero-stat {
+            text-align: left;
+        }
+        
+        .hero-stat-number {
+            font-size: 32px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+        
+        .hero-stat-label {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 18px 40px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--light);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 10px 30px rgba(106, 17, 203, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(106, 17, 203, 0.5);
+        }
+        
+        .hero-image {
+            position: relative;
+            flex-shrink: 0;
+            width: 400px;
+            height: 400px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(106, 17, 203, 0.4);
+            border: 3px solid rgba(106, 17, 203, 0.3);
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        .social-icons {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            display: flex;
+            gap: 12px;
+            z-index: 10;
+        }
+        
+        .social-icon {
+            width: 48px;
+            height: 48px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #0a0a0a;
+            font-size: 24px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+        }
+        
+       /* Logo Carousel */
+.logo-carousel {
+    background: var(--dark-gray);
+    padding: 60px 0;
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.carousel-track {
+    display: flex;
+    animation: scroll 30s linear infinite;
+    gap: 80px;
+}
+
+.carousel-logo {
+    min-width: 150px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px; /* Add padding for images */
+    flex-shrink: 0; /* Prevent logos from shrinking */
+}
+
+/* Style for images inside carousel-logo */
+.carousel-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain; /* Ensures images maintain aspect ratio */
+    filter: grayscale(100%) brightness(1.5); /* Make logos light gray to match theme */
+    transition: filter 0.3s ease;
+}
+
+/* Optional: Add hover effect */
+.carousel-logo:hover img {
+    filter: grayscale(0%) brightness(1);
+}
+
+/* Keep the original text/icon styles as fallback */
+.carousel-logo i {
+    font-size: 24px;
+    margin-right: 8px;
+}
+
+.carousel-logo span {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-gray);
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .carousel-logo {
+        min-width: 120px;
+        height: 50px;
+        padding: 8px 15px;
+        gap: 60px;
+    }
+    
+    .carousel-logo img {
+        max-height: 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-logo {
+        min-width: 100px;
+        height: 40px;
+        padding: 6px 12px;
+        gap: 40px;
+    }
+    
+    .carousel-logo img {
+        max-height: 40px;
+    }
+}
+        
+        .about-image img {
+    width: 150%;
+    max-height: 1000px;
+    max-width: 500px; /* adjust as needed */
+    border-radius: 10px; /* optional rounded corners */
+        }
+        
+        .section-header {
+            margin-bottom: 60px;
+        }
+        
+        .section-title {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--text-gray);
+            max-width: 700px;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+        
+        .about-text {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--text-gray);
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+        }
+        
+        .about-image {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            color: white;
+        }
+        
+        /* News Section */
+        .news {
+            padding: 120px 0;
+            background: var(--dark-gray);
+        }
+        
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .news-card {
+            background: var(--dark);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .news-image {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: white;
+        }
+        
+        .news-content {
+            padding: 30px;
+        }
+        
+        .news-source {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .news-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+        
+        .news-description {
+            font-size: 15px;
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .news-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .news-link:hover {
+            gap: 10px;
+        }
+        
+        /* Achievements Section */
+        .achievements {
+            padding: 120px 0;
+        }
+        
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        
+        .achievement-card {
+            background: var(--dark-gray);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .achievement-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+        }
+        
+        .achievement-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .achievement-badge {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        
+        .badge-text {
+            font-size: 14px;
+            line-height: 1;
+        }
+        
+        .badge-number {
+            font-size: 24px;
+            line-height: 1;
+        }
+        
+        .achievement-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .achievement-position {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .achievement-description {
+            font-size: 15px;
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .achievement-logo {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+        
+        /* Publications Section */
+        .publications {
+            padding: 120px 0;
+            background: var(--dark-gray);
+        }
+        
+        .publication-card {
+            background: var(--dark);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .publication-type {
+            display: inline-block;
+            padding: 6px 12px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .publication-year {
+            color: var(--text-gray);
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .publication-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .publication-authors {
+            color: var(--text-gray);
+            font-size: 15px;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+        
+        .publication-venue {
+            color: var(--primary);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .publication-description {
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .publication-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .publication-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 120px 0;
+        }
+        
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 60px 0 40px;
+        }
+        
+        .contact-item {
+            text-align: center;
+        }
+        
+        .contact-label {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-bottom: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .contact-value {
+            font-size: 18px;
+            color: var(--light);
+        }
+        
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .social-button {
+            padding: 15px 35px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--light);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .social-button:hover {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            transform: translateY(-3px);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-gray);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--light);
+        }
+        
+        .copyright {
+            color: var(--text-gray);
+            font-size: 14px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            nav {
+                padding: 20px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .hero .container {
+                flex-direction: column-reverse;
+                gap: 40px;
+            }
+            
+            .hero {
+                padding: 140px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 48px;
+                text-align: center;
+            }
+            
+            .hero-subtitle {
+                font-size: 22px;
+                text-align: center;
+            }
+            
+            .hero-image {
+                width: 100%;
+                max-width: 350px;
+                height: 350px;
+                margin: 0 auto;
+            }
+            
+            .hero-content {
+                text-align: center;
+                max-width: 100%;
+            }
+            
+            .hero-description {
+                text-align: center;
+                max-width: 100%;
+            }
+            
+            .hero-stats {
+                justify-content: center;
+                gap: 30px;
+            }
+            
+            .hero-stat {
+                text-align: center;
+            }
+            
+            .hero-tags {
+                justify-content: center;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .achievements-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 36px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero-subtitle {
+                font-size: 18px;
+            }
+            
+            .hero-image {
+                width: 100%;
+                max-width: 300px;
+                height: 300px;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .hero-stats {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            
+            .hero-stat {
+                min-width: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">Samuel Quartey Opoku</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Samuel Quartey Opoku</h1>
+                <p class="hero-subtitle">Statistics & Data Analyst</p>
+                
+
+ 
+
+                <div class="hero-tags">
+                    <span class="hero-tag">Statistics</span>
+                    <span class="hero-tag">Data Analyst</span>
+                    <span class="hero-tag">Journalist</span>
+                    <span class="hero-tag">Web/App Developer</span>
+                </div>
+                
+                <p class="hero-description">
+                   Graduate Statistician with strong skills in data analysis and data collection.
+                    Proficient in Excel, Python, SQL, Power BI, and R. Best Enumerator for Atwima Nwabiagya
+                     North Municipal during the 2021 PHC, demonstrating high accuracy in field data work. 
+                </p>
+                
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">05</div>
+                        <div class="hero-stat-label">Projects Completed</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">01</div>
+                        <div class="hero-stat-label">Award Won</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">03</div>
+                        <div class="hero-stat-label">Publications</div>
+                    </div>
+                </div>
+                
+                <a href="https:\\wa.me\+233504583678" class="cta-button">Get In Touch</a>
+            </div>
+          
+            <div class="hero-image">
+    <img src="assets/images/image.jpg" alt="Samuel Quartey Opoku">
+    <div class="social-icons">
+        <a href="#" class="social-icon" title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="#" class="social-icon" title="GitHub">
+            <i class="fab fa-github"></i>
+        </a>
+    </div>
+</div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Logo Carousel -->
+    <!-- Better approach with relative paths -->
+<section class="logo-carousel">
+    <div class="carousel-track">
+         <div class="carousel-logo">
+            <img src="assets/images/Forestry.jpg" alt="Forestry Logo">
+        </div>
+        <div class="carousel-logo">
+            <img src="assets/images/GSS.jpg" alt="GSS Logo">
+        </div>
+        <div class="carousel-logo">
+            <img src="assets/images/KNUST.jpg" alt="KNUST Logo">
+        </div>
+        <div class="carousel-logo">
+            <img src="assets/images/Naposports.jpg" alt="Naposports Logo">
+        </div>
+        <div class="carousel-logo">
+            <img src="assets/images/PHC.png" alt="PHC Logo">
+        </div>
+        
+        <!-- Duplicate for seamless scrolling -->
+        <div class="carousel-logo">
+            <img src="assets/images/Forestry.jpg" alt="Forestry Logo">
+        </div>
+        <div class="carousel-logo">
+            <img src="assets/images/GSS.jpg" alt="GSS Logo">
+        </div>
+        <div class="carousel-logo">
+            <img src="assets/images/KNUST.jpg" alt="KNUST Logo">
+        </div>
+        <div class="carousel-logo">
+            <img src="assets/images/Naposports.jpg" alt="Naposports Logo">
+        </div>
+        <div class="carousel-logo">
+            <img src="assets/images/PHC.png" alt="PHC Logo">
+        </div>
+    </div>
+</section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Best Enumerator for Atwima Nwabiagya North Municipal (2021 PHC), I am a Graduate Statistician skilled in data analysis and data collection, proficient in Excel, Python, SQL, Power BI, and R. I also work as a journalist and administrator for NapoSports, combining strong communication, digital coordination, and data skills to deliver impactful results. 
+                    Passionate about turning data into insights and ideas into action.</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p><strong>Best Enumerator for Atwima Nwabiagya North Municipal (2021 PHC)</strong>, 
+                        I am a Graduate Statistician with strong skills in data analysis, statistical modeling, 
+                        and data collection. For my <strong>final year project at KNUST</strong>, I focused on <strong>forecasting MTN stock prices and analyzing its market volatility</strong>,
+                         applying advanced statistical and time series methods to generate actionable financial insights.</p>
+
+    <p>Currently serving as a <strong>National Service Personnel at the Forestry Commission</strong>, 
+        I have worked on <strong>trend analysis of Ghana’s agricultural sector GDP over the past 10 years</strong>,
+         using Excel, R, and Power BI, gaining hands-on experience in data collection, processing, and interpretation to inform sectoral insights.</p>
+
+    <p>Proficient in Excel, Python, SQL, Power BI, and R, I also work as a <strong>journalist and administrator for NapoSports</strong>,
+        combining strong communication, digital coordination, and analytical skills to deliver impactful results.
+         I am passionate about turning data into insights and ideas into action.</p>
+                </div>
+                <div class="about-image">
+    <img src="assets/images/mtn.jpg" alt="MTN" />
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="news" id="news">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured in Major News</h2>
+                <p class="section-subtitle">My innovative work has been covered by leading publications and recognized by top institutions</p>
+            </div>
+            
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-image">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-source">TechCrunch</div>
+                        <h3 class="news-title">Breakthrough Innovation in Web Development</h3>
+                        <p class="news-description">
+                            Featured coverage of innovative web application development that's 
+                            transforming how businesses approach digital solutions and user experiences.
+                        </p>
+                        <a href="#" class="news-link">Read Article →</a>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-image">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-source">Forbes</div>
+                        <h3 class="news-title">30 Under 30 in Technology</h3>
+                        <p class="news-description">
+                            Recognition for exceptional contributions to technology and innovation, 
+                            highlighting breakthrough work in AI-powered applications and digital transformation.
+                        </p>
+                        <a href="#" class="news-link">Read Forbes Article →</a>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-image">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-source">Wired</div>
+                        <h3 class="news-title">The Future of Creative Technology</h3>
+                        <p class="news-description">
+                            In-depth feature on pioneering work in merging artistic vision with 
+                            technical innovation to create next-generation digital experiences.
+                        </p>
+                        <a href="#" class="news-link">Read Wired Feature →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="achievements" id="achievements">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Key Achievements</h2>
+                <p class="section-subtitle">Breakthrough innovations and recognition demonstrating technical excellence and real-world impact</p>
+            </div>
+            
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-badge">
+                        <span class="badge-text">1st</span>
+                        <span class="badge-number">PLACE</span>
+                    </div>
+                    <h3 class="achievement-title">Innovation Challenge Winner</h3>
+                    <p class="achievement-position">Position: Technical Lead & Architect</p>
+                    <p class="achievement-description">
+                        Led winning team in national innovation competition, developing 
+                        cutting-edge AI solution that secured top prize among 50+ competing teams.
+                    </p>
+                    <div class="achievement-logo">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-badge">
+                        <span class="badge-text">TOP</span>
+                        <span class="badge-number">10</span>
+                    </div>
+                    <h3 class="achievement-title">Developer of the Year</h3>
+                    <p class="achievement-position">Position: Full-Stack Developer & Innovator</p>
+                    <p class="achievement-description">
+                        Recognized as one of top 10 emerging developers for exceptional 
+                        contributions to open-source projects and innovative web solutions.
+                    </p>
+                    <div class="achievement-logo">
+                        <i class="fas fa-code"></i>
+                    </div>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-badge">
+                        <span class="badge-text">WINNER</span>
+                    </div>
+                    <h3 class="achievement-title">Best UI/UX Design</h3>
+                    <p class="achievement-position">Position: Lead Designer & Developer</p>
+                    <p class="achievement-description">
+                        Awarded for outstanding user interface design and user experience 
+                        innovation in e-commerce platform serving 100K+ users.
+                    </p>
+                    <div class="achievement-logo">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-badge">
+                        <span class="badge-text">2nd</span>
+                        <span class="badge-number">PLACE</span>
+                    </div>
+                    <h3 class="achievement-title">Hackathon Championship</h3>
+                    <p class="achievement-position">Position: Team Lead & Full-Stack Developer</p>
+                    <p class="achievement-description">
+                        Second place finish in 48-hour hackathon, building complete 
+                        mobile-responsive web application with real-time features.
+                    </p>
+                    <div class="achievement-logo">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-badge">
+                        <span class="badge-text">CERT</span>
+                    </div>
+                    <h3 class="achievement-title">AWS Solutions Architect</h3>
+                    <p class="achievement-position">Position: Cloud Infrastructure Specialist</p>
+                    <p class="achievement-description">
+                        Professional certification demonstrating expertise in designing 
+                        and deploying scalable cloud solutions on AWS infrastructure.
+                    </p>
+                    <div class="achievement-logo">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-badge">
+                        <span class="badge-text">WINNER</span>
+                    </div>
+                    <h3 class="achievement-title">Most Innovative Project</h3>
+                    <p class="achievement-position">Position: Creator & Lead Developer</p>
+                    <p class="achievement-description">
+                        Recognition for groundbreaking AI-powered analytics dashboard 
+                        that revolutionized data visualization in the industry.
+                    </p>
+                    <div class="achievement-logo">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section class="publications" id="publications">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Research Publications</h2>
+                <p class="section-subtitle">Research contributions to the fields of AI, web development, and user experience design</p>
+            </div>
+            
+            <div class="publication-card">
+                <span class="publication-type">Journal Paper</span>
+                <div class="publication-year">2024</div>
+                <h3 class="publication-title">Modern Approaches to Responsive Web Design</h3>
+                <p class="publication-authors">Samuel Q. Opoku, et al.</p>
+                <p class="publication-venue">International Journal of Web Technologies</p>
+                <p class="publication-description">
+                    This paper presents innovative approaches to creating responsive web applications 
+                    that provide optimal user experiences across all devices. It integrates advanced 
+                    frameworks and design patterns for building scalable web solutions.
+                </p>
+                <div class="publication-links">
+                    <a href="#" class="publication-link"><i class="fas fa-file-pdf"></i> Read Paper</a>
+                    <a href="#" class="publication-link"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+                </div>
+            </div>
+            
+            <div class="publication-card">
+                <span class="publication-type">Conference Paper</span>
+                <div class="publication-year">2023</div>
+                <h3 class="publication-title">AI-Powered User Interface Optimization</h3>
+                <p class="publication-authors">Samuel Q. Opoku, J. Smith, M. Johnson</p>
+                <p class="publication-venue">ACM Conference on Web Technologies 2023</p>
+                <p class="publication-description">
+                    An innovative approach to optimizing user interfaces through machine learning 
+                    algorithms that analyze user behavior patterns and automatically adjust UI elements 
+                    for improved engagement and conversion rates.
+                </p>
+                <div class="publication-links">
+                    <a href="#" class="publication-link"><i class="fas fa-file-pdf"></i> Read Paper</a>
+                    <a href="#" class="publication-link"><i class="fas fa-code"></i> View Code</a>
+                </div>
+            </div>
+            
+            <div class="publication-card">
+                <span class="publication-type">Open Source</span>
+                <div class="publication-year">2024</div>
+                <h3 class="publication-title">ReactFlow UI Library</h3>
+                <p class="publication-authors">Samuel Q. Opoku (Creator and Maintainer)</p>
+                <p class="publication-venue">Open-Source React Component Library</p>
+                <p class="publication-description">
+                    A comprehensive React component library for building modern, accessible web 
+                    applications. Features over 100 customizable components with built-in animations 
+                    and responsive design patterns.
+                </p>
+                <div class="publication-links">
+                    <a href="#" class="publication-link"><i class="fab fa-github"></i> GitHub Repository</a>
+                    <a href="#" class="publication-link"><i class="fas fa-book"></i> Documentation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="section-title">Let's Work Together</h2>
+                <p class="section-subtitle">Ready to discuss innovative solutions, collaborations, or career opportunities?</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-label">Email</div>
+                        <div class="contact-value">samuel@example.com</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-label">Location</div>
+                        <div class="contact-value">Accra, Ghana</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-label">Phone</div>
+                        <div class="contact-value">+233 XX XXX XXXX</div>
+                    </div>
+                </div>
+                
+                <div class="contact-buttons">
+                    <a href="mailto:samuel@example.com" class="social-button">
+                        <i class="fas fa-envelope"></i> Send Email
+                    </a>
+                    <a href="#" class="social-button">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="#" class="social-button">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="#" class="social-button">
+                        <i class="fab fa-twitter"></i> Twitter
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="mailto:samuel@example.com">Send Email</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">GitHub</a>
+            </div>
+            <p class="copyright">© 2025 Samuel Quartey Opoku. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Header background on scroll
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                header.style.background = 'rgba(10, 10, 10, 0.98)';
+            } else {
+                header.style.background = 'rgba(10, 10, 10, 0.95)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+        
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements for animation
+        document.querySelectorAll('.news-card, .achievement-card, .publication-card').forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
