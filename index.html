@@ -16,6 +16,7 @@
             --primary: #6a11cb;
             --secondary: #2575fc;
             --accent: #ff416c;
+            --green: #10b981;
             --dark: #0a0a0a;
             --dark-gray: #1a1a1a;
             --light: #ffffff;
@@ -126,6 +127,10 @@
             border-radius: 20px;
             font-size: 13px;
             font-weight: 600;
+        }
+        
+        .hero-tag.green {
+            background: var(--green);
         }
         
         .hero-description {
@@ -376,7 +381,7 @@
         .Experience-image img {
     width: 150%;
     height: 100%;
-    object-fit: contain; /* Changed from 'cover' to 'contain' */
+    object-fit: contain;
     object-position: center;
 }
         
@@ -828,7 +833,9 @@
                     <span class="hero-tag">Statistics</span>
                     <span class="hero-tag">Data Analyst</span>
                     <span class="hero-tag">Journalist</span>
-                    <span class="hero-tag">Web/App Developer</span>
+                    <a href="assets/cv/cv.pdf" class="hero-tag green" download style="text-decoration: none; cursor: pointer;">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
                 </div>
                 
                 <p class="hero-description">
@@ -852,18 +859,19 @@
                     </div>
                 </div>
                 
-                <a href="https:\\wa.me\+233504583678" class="cta-button">Get In Touch</a>
+                <a href="https://wa.me/+233504583678" class="cta-button">Get In Touch</a>
             </div>
           
             <div class="hero-image">
     <img src="assets/images/image.jpg" alt="Samuel Quartey Opoku">
     <div class="social-icons">
-         <a href="https://www.linkedin.com/in/samuel-quartey-opoku-613075282/" 
-   class="social-button" 
-   target="_blank" 
-   rel="noopener noreferrer">
-    <i class="fab fa-linkedin"></i> LinkedIn
-</a>
+        <a href="https://www.linkedin.com/in/samuel-quartey-opoku-613075282/" 
+           class="social-icon" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+        </a>
         <a href="#" class="social-icon" title="GitHub">
             <i class="fab fa-github"></i>
         </a>
